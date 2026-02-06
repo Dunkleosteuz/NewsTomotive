@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Tesla Model S",
+    "type": "Electric",
+    "power": "1020 HP",
+    "price": "$95,000",
+    "image": "https://via.placeholder.com/600x360?text=Tesla+Model+S",
+    "year": 2023
+  },
+  {
+    "id": 2,
+    "name": "BMW M4 Coupe",
+    "type": "Sport",
+    "power": "503 HP",
+    "price": "$78,000",
+    "image": "https://via.placeholder.com/600x360?text=BMW+M4",
+    "year": 2022
+  },
+  {
+    "id": 3,
+    "name": "Honda CB500F",
+    "type": "Naked",
+    "power": "47 HP",
+    "price": "$6,000",
+    "image": "https://via.placeholder.com/600x360?text=Honda+CB500F",
+    "year": 2021
+  },
+  {
+    "id": 4,
+    "name": "Yamaha YZF-R1",
+    "type": "Sport",
+    "power": "200 HP",
+    "price": "$17,000",
+    "image": "https://via.placeholder.com/600x360?text=Yamaha+R1",
+    "year": 2020
+  }
+]

@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# NewsTomotive
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portal berita otomotif modern, interaktif, dan responsif berbasis React. Menyajikan kurasi berita mobil dan motor terkini untuk audiens Indonesia dengan pengalaman baca yang cepat, bersih, dan menarik.
 
-## Available Scripts
+## Highlight
 
-In the project directory, you can run:
+- Berita otomotif terbaru (Indonesia)
+- Halaman terpisah untuk Mobil dan Motor
+- Pencarian cepat, refresh instan, dan hero headline
+- Kartu berita animatif dengan tampilan dinamis
+- Form newsletter dengan validasi (nama, email, preferensi)
+- Desain responsif dengan gradien modern
 
-### `npm start`
+## Demo Lokal (Cepat)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Masuk ke folder proyek
+   - `cd web-otomotif`
+2. Install dependensi
+   - `npm install`
+3. Jalankan server dev
+   - `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Aplikasi akan berjalan pada http://localhost:3000
 
-### `npm test`
+## Struktur Fitur
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Home**: feed berita umum otomotif dengan headline utama
+- **Mobil**: fokus berita mobil
+- **Motor**: fokus berita motor
+- **Newsletter**: form pendaftaran dengan validasi input
 
-### `npm run build`
+## Integrasi API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sumber data menggunakan newsdata.io endpoint `api/1/latest` (country=id, category=technology).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Feed umum: `q=otomotif` dan `q=kendaraan` (digabung & dedup)
+- Mobil: `q=mobil`
+- Motor: `q=motor`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+File service ada di `src/services/newsApi.js` yang menyediakan:
 
-### `npm run eject`
+- `fetchGeneralNews()`
+- `fetchCarNews()`
+- `fetchMotorNews()`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Kunci API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Gunakan API key pribadi dengan menyimpan di `localStorage`:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`NEWS_API_KEY`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Jika tidak ada key, aplikasi memakai public key bawaan.
 
-## Learn More
+## Struktur Folder
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `public/` — HTML & metadata
+- `src/`
+  - `components/` — UI cards, hero, navbar, footer, form
+  - `pages/` — Home, Mobil, Motor
+  - `services/` — integrasi API
+  - `App.js` — routing dan layout utama
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Catatan Penting
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Tidak membutuhkan backend/server
+- Data fallback lokal tersedia bila API tidak bisa diakses
+- File legacy sudah dihapus untuk menjaga codebase tetap bersih

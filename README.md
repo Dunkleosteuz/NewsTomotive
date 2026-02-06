@@ -1,6 +1,6 @@
 # NewsTomotive
 
-Portal berita otomotif modern, interaktif, dan responsif berbasis React. Menyajikan kurasi berita mobil dan motor terkini untuk audiens Indonesia dengan pengalaman baca yang cepat, bersih, dan menarik.
+Portal berita otomotif modern, interaktif, dan responsif berbasis React. Web ini menyajikan kurasi berita mobil dan motor terkini untuk audiens Indonesia dengan pengalaman baca yang cepat, bersih, dan menarik.
 
 ## Highlight
 
@@ -60,8 +60,3 @@ Jika tidak ada key, aplikasi memakai public key bawaan.
   - `services/` — integrasi API
   - `App.js` — routing dan layout utama
 
-## Catatan Penting
-
-- Tidak membutuhkan backend/server
-- Data fallback lokal tersedia bila API tidak bisa diakses
-- File legacy sudah dihapus untuk menjaga codebase tetap bersih
